@@ -1,0 +1,21 @@
+(defun c:drwtxt()
+  (setq x 1)
+  (setq y 1)  
+  (repeat 34
+    (repeat 88
+      (setq x_str (itoa x))
+      (setq y_str (itoa y))
+      (if (= (strlen x_str) 1) (setq x_str (strcat "0" x_str)))
+      (if (= (strlen y_str) 1) (setq y_str (strcat "0" y_str)))
+      (setq txt_str (strcat y_str x_str))
+      (setq x_val (* x 2.7))
+      (setq y_val (* y -1.05))
+      (setq txt_dt (list (cons 0 "text")(cons 1 txt_str)(cons 10 (list x_val y_val 0))(cons 40 0.15)(cons 41 1.3)))
+      (entmake txt_dt)
+      (setq y (+ y 1))
+      )
+    (setq x (+ x 1))
+    (setq y 1)
+    )
+  )
+      

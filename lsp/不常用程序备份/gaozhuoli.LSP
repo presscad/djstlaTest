@@ -1,0 +1,156 @@
+(defun c:gzl(/ e_input g_input h_input f_input i_input j_input r_input etotal_pi ftotal_pi kf1 ce1 cf1 ke1 txt
+               e_pi g_pi h_pi en_pi f_pi i_pi j_pi fn_pi r_pi align_x align_y dat orth_old osnp_old en fn   p1
+	       p2 p3 p4 ss1 ss2 )
+(setq orth_old(getvar"orthomode")osnp_old (getvar"osmode"))
+(setvar "osmode" 0 )
+(setvar "orthomode" 0)
+(command "limits""-300,-300""300,300")
+(command "zoom"(getvar"limmin")(getvar"limmax"))  
+;The proguame drawing the fuame!!                                                                                    
+    (defun draw_edge () 
+        (command "pline" (list -227.0 32.424) "w" 0 0 
+                         (list -225.0 32.424) 
+                         (list -225.0 270.0) 
+                         (list -70.6513 270.0) 
+                         (list -70.6513 272.0) 
+                         (list -227.0 272.0) 
+                         "c"
+         )
+        (command "pline" (list -227.0 -3.2272) "w" 0 0 
+                         (list -225.0 -3.2272) 
+                         (list -225.0 -260.0) 
+                         (list -70.6513 -260.0) 
+                         (list -70.6513 -262.0) 
+                         (list -227.0 -262.0) 
+                         "c"
+         )
+        (command "pline" (list 84.37 272.0) "w" 0 0 
+                         (list 84.37 270.0) 
+                         (list 225.0 270.0) 
+                         (list 225.0 32.424) 
+                         (list 227.0 32.424) 
+                         (list 227.0 272.0) 
+                         "c"
+         )
+        (command "pline" (list 225.0 -3.2272) "w" 0 0 
+                         (list 227.0 -3.2272) 
+                         (list 227.0 -262.0) 
+                         (list 84.37 -262.0) 
+                         (list 84.37 -260.0) 
+                         (list 225.0 -260.0) 
+                         "c"
+         )
+        (command "pline" (list -195.8 -196.3) "w" 0 0 
+                         (list -199.7 -196.3) 
+                         (list -199.7 -200.2) 
+                         (list -202.3 -200.2) 
+                         (list -202.3 -196.3) 
+                         (list -206.2 -196.3) 
+                         (list -206.2 -193.7) 
+                         (list -195.8 -193.7) 
+                         "c"
+         )
+        (command "pline" (list 195.8 -196.3) "w" 0 0 
+                         (list 199.7 -196.3) 
+                         (list 199.7 -200.2) 
+                         (list 202.3 -200.2) 
+                         (list 202.3 -196.3) 
+                         (list 206.2 -196.3) 
+                         (list 206.2 -193.7) 
+                         (list 195.8 -193.7) 
+                         "c"
+         )
+        (command "pline" (list 202.3 203.7) "w" 0 0 
+                         (list 202.3 199.8) 
+                         (list 199.7 199.8) 
+                         (list 199.7 203.7) 
+                         (list 195.8 203.7) 
+                         (list 195.8 206.3) 
+                         (list 199.7 206.3) 
+                         (list 199.7 210.2) 
+                         (list 202.3 210.2) 
+                         (list 202.3 206.3) 
+                         (list 206.2 206.3) 
+                         (list 206.2 203.7) 
+                         "c"
+         )
+        (command "pline" (list -202.3 203.7) "w" 0 0 
+                         (list -202.3 199.8) 
+                         (list -199.7 199.8) 
+                         (list -199.7 203.7) 
+                         (list -195.8 203.7) 
+                         (list -195.8 206.3) 
+                         (list -199.7 206.3) 
+                         (list -199.7 210.2) 
+                         (list -202.3 210.2) 
+                         (list -202.3 206.3) 
+                         (list -206.2 206.3) 
+                         (list -206.2 203.7) 
+                         "c"
+         )
+  )
+;Get the data for the proguame!                                                                                   
+    (setq e_input (getreal "Please input E: "))
+    (setq g_input (getreal "Please input G: "))
+    (setq h_input (getreal "Please input H: "))
+    (setq en_pi   (getint "Please input EN: "))
+                                               (if (= en_pi 0)(setq en_pi 1))
+    (setq f_input (getreal "Please input F: "))
+    (setq i_input (getreal "Please input I: "))
+    (setq j_input (getreal "Please input J: "))
+    (setq fn_pi   (getint "Please input FN: "))
+                                               (if (= fn_pi 0)(setq fn_pi 1))
+    (setq r_input (getreal "Please input R: "))
+   
+;Calculate the data after the scaling and offsetting!!                                                             
+ 
+    (setq ke1 0.9850 ce1 0.12 kf1 0.0 cf1 0.12)
+    (setq e_pi (* ke1 (- e_input ce1)))
+    (setq g_pi (* ke1 (+ g_input ce1)))
+    (setq h_pi (* ke1 (+ h_input ce1)))
+    (setq f_pi (- f_input (+ cf1 (* kf1 f_input))))
+    (setq i_pi (+ i_input (+ cf1 (* kf1 f_input))))
+    (setq j_pi (+ j_input (+ cf1 (* kf1 f_input))))
+    (cond ((> r_input 0.4)
+           (setq r_pi (- r_input 0.001))
+          )
+          (t (setq r_pi 0.001)) ;r_pi must be nozero
+    )
+   (setq etotal_pi (+(* en_pi e_pi)(* g_pi (/ en_pi 2))(* h_pi (/ (- en_pi 1) 2)))
+         ftotal_pi (+(* fn_pi f_pi)(* i_pi (/ fn_pi 2))(* j_pi (/ (- fn_pi 1) 2)))
+         align_x   (- 0(/ ftotal_pi 2))
+	 align_y   (/ etotal_pi 2)
+	 en 0 fn 0
+   )
+  ;Now start working!!!                                                                                               
+   (while (< en en_pi)
+          (while (< fn fn_pi)
+                 (setq p1 (list (+ align_x(+ (* fn f_pi)(* i_pi(/ (+ 1 fn) 2))(* j_pi (/  fn 2))))
+		  	   (- align_y(+ (* en e_pi)(* g_pi(/ (+ 1 en) 2))(* h_pi (/  en 2)))))
+		     
+		       p2 (list (+ (car p1)f_pi)(cadr p1))
+		       p3 (list (car p2)(- (cadr p2)e_pi))
+		       p4 (list (- (car p3)f_pi)(cadr p3))	  
+	         )
+                 (command "pline" p1"w""0""0"p2 p3 p4"c")
+                 (setq ss1(ssget"l"))
+                 (setvar "filletrad" r_input)
+                 (command "fillet" "p" ss1)
+                 (setq fn (+ 1 fn))
+	  )
+          (setq en (+ 1 en) fn 0)
+    )
+   (draw_edge)
+   (setq txt(getstring"请输入model号及客户日期：" T))
+   (setq dat(fix(getvar"cdate")))
+   (command "text""j""fit""-115,-240""115,-240""7"(strcat txt(strcat" " (itoa dat))))
+   (setq ss2(ssget"x"))
+   (command "move" "all""" "-227,-262""0,0")
+   (setvar "orthomode" orth_old)
+   (setvar "osmode"    osnp_old)
+   (command "zoom" "extenTs")
+   (alert"第一次制作，请向客户确定单粒y方向与边框的对中方式")
+  
+   
+   
+  )

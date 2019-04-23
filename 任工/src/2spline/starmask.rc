@@ -1,0 +1,347 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文（中华人民共和国） resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "starmask ObjectARX application"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "starmask"
+            VALUE "LegalCopyright", "Copyright ?2002"
+            VALUE "OriginalFilename", "asdkstarmask.arx"
+            VALUE "ProductName", "starmask Application"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SPLDIALOG DIALOGEX 0, 0, 186, 90
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 12, "宋体", 400, 0, 0x86
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,129,7,50,14
+    PUSHBUTTON      "取消",IDCANCEL,129,24,50,14
+    COMBOBOX        IDC_COMBO1,16,33,96,50,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "请选择SPLINE的拟合精度:",IDC_STATIC,17,15,90,8
+END
+
+IDD_MYDIALOG DIALOGEX 0, 0, 209, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ObjectARX Dialog"
+FONT 12, "宋体", 400, 0, 0x86
+BEGIN
+    PUSHBUTTON      "s&e2p:椭圆转多义线",IDC_EL2PL,7,7,89,14,BS_LEFT
+    PUSHBUTTON      "&myspl:测试多样线",IDC_MYSPL,113,7,89,14,BS_LEFT
+    PUSHBUTTON      "s&s2o:样条曲线转多义线",IDC_SPL2PL,7,21,89,14,BS_LEFT
+    PUSHBUTTON      "etity info",IDC_ENTINFO,113,21,89,14,BS_LEFT
+    PUSHBUTTON      "draw arc 3pt",IDC_TESTARC3P,113,74,89,14,BS_LEFT
+    PUSHBUTTON      "testParam",IDC_TSTPARAM,113,60,89,14,BS_LEFT
+    PUSHBUTTON      "s&t2p:Text->Polyline",IDC_TEXT2PL,7,35,89,14,BS_LEFT
+    PUSHBUTTON      "text.e&xplode",IDC_MT2DT,7,50,89,14,BS_LEFT
+    PUSHBUTTON      "&widen",IDC_WIDEN,7,64,89,14,BS_LEFT
+END
+
+IDD_EL2PLDIALOG DIALOGEX 0, 0, 186, 87
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ObjectARX Dialog"
+FONT 12, "宋体", 400, 0, 0x86
+BEGIN
+    DEFPUSHBUTTON   "&S选择",IDC_SELECT,129,6,50,14
+    PUSHBUTTON      "&O一层",IDC_ONELAYER,129,26,50,14
+    PUSHBUTTON      "&A全部",IDC_ALL,129,43,50,14
+    LTEXT           "请选择层(如果转换一层):",IDC_STATIC,7,7,89,8
+    COMBOBOX        IDC_LAYERS,7,19,101,103,CBS_DROPDOWNLIST | 
+                    CBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_SEGNUM,7,48,40,14,ES_AUTOHSCROLL
+    LTEXT           "段数(0为自动分段)",IDC_STATIC,7,36,105,10
+END
+
+IDD_MYOPTION DIALOGEX 0, 0, 204, 143
+STYLE DS_SETFONT | WS_CHILD | WS_SYSMENU
+FONT 12, "宋体", 400, 0, 0x86
+BEGIN
+    COMBOBOX        IDC_COMBO1,15,27,89,50,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "请选择SPLINE的拟合精度:",IDC_STATIC1,14,16,99,8,NOT 
+                    WS_GROUP
+    EDITTEXT        IDC_SEGNUM,15,57,40,14,ES_AUTOHSCROLL
+    LTEXT           "SPLINE段数(0为自动分段):",IDC_STATIC3,14,44,113,8,NOT 
+                    WS_GROUP
+END
+
+IDD_TEXT2PLDIALOG DIALOGEX 0, 0, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ObjectARX Dialog"
+FONT 12, "宋体", 400, 0, 0x86
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,16
+    EDITTEXT        IDC_EDIT1,7,25,73,14,ES_AUTOHSCROLL
+    LTEXT           "线宽高度比(S):",IDC_STATIC,7,15,57,8
+END
+
+IDC_TEXT2PLSEL DIALOGEX 0, 0, 186, 87
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ObjectARX Dialog"
+FONT 12, "宋体", 400, 0, 0x86
+BEGIN
+    DEFPUSHBUTTON   "&S选择",IDC_SELECT,129,6,50,14
+    PUSHBUTTON      "&O一层",IDC_ONELAYER,129,26,50,14
+    PUSHBUTTON      "&A全部",IDC_ALL,129,43,50,14
+    LTEXT           "请选择层(如果转换一层):",-1,17,17,89,8
+    COMBOBOX        IDC_LAYERS,15,28,101,103,CBS_DROPDOWNLIST | 
+                    CBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "&widen",IDC_WIDEN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    15,55,36,10
+END
+
+IDD_WIDEN DIALOGEX 0, 0, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ObjectARX Dialog"
+FONT 12, "宋体", 400, 0, 0x86
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,16
+    EDITTEXT        IDC_WIDEN,7,25,73,14,ES_AUTOHSCROLL
+    LTEXT           "线宽:",IDC_STATIC,7,15,21,8
+    CONTROL         "&F单线加宽后圆角",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,47,76,10
+    CONTROL         "&P多义线只圆两头",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,64,76,10
+END
+
+IDD_WIDENSELDIALOG DIALOGEX 0, 0, 198, 92
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ObjectARX Dialog"
+FONT 12, "宋体", 400, 0, 0x86
+BEGIN
+    DEFPUSHBUTTON   "&S选择",IDC_SELECT,124,7,67,17
+    PUSHBUTTON      "&O一层",IDC_ONELAYER,124,32,67,17
+    PUSHBUTTON      "&A全部",IDC_ALL,124,53,67,17
+    LTEXT           "请选择层(如果转换一层):",IDC_STATIC,7,7,110,10
+    COMBOBOX        IDC_LAYERS,7,20,100,103,CBS_DROPDOWNLIST | 
+                    CBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_SEGNUM,32,34,53,14,ES_AUTOHSCROLL
+    LTEXT           "线宽:",IDC_STATIC1,7,38,25,10
+    CONTROL         "&F单线加宽后圆角",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,54,76,10
+    CONTROL         "&P多义线只圆两头",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,66,76,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_SPLDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+
+    IDD_MYDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 202
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_EL2PLDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 80
+    END
+
+    IDD_MYOPTION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 197
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 136
+    END
+
+    IDD_TEXT2PLDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDC_TEXT2PLSEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 80
+    END
+
+    IDD_WIDEN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_WIDENSELDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 191
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 85
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_SPLDIALOG DLGINIT
+BEGIN
+    IDC_COMBO1, 0x403, 4, 0
+0x2e30, 0x0031, 
+    IDC_COMBO1, 0x403, 5, 0
+0x2e30, 0x3130, "\000" 
+    IDC_COMBO1, 0x403, 6, 0
+0x2e30, 0x3030, 0x0031, 
+    IDC_COMBO1, 0x403, 7, 0
+0x2e30, 0x3030, 0x3130, "\000" 
+    IDC_COMBO1, 0x403, 8, 0
+0x2e30, 0x3030, 0x3030, 0x0031, 
+    IDC_COMBO1, 0x403, 9, 0
+0x2e30, 0x3030, 0x3030, 0x3130, "\000" 
+    IDC_COMBO1, 0x403, 10, 0
+0x2e30, 0x3030, 0x3030, 0x3030, 0x0031, 
+    IDC_COMBO1, 0x403, 11, 0
+0x2e30, 0x3030, 0x3030, 0x3030, 0x3130, "\000" 
+    IDC_COMBO1, 0x403, 12, 0
+0x2e30, 0x3030, 0x3030, 0x3030, 0x3030, 0x0031, 
+    0
+END
+
+IDD_MYOPTION DLGINIT
+BEGIN
+    IDC_COMBO1, 0x403, 4, 0
+0x2e30, 0x0031, 
+    IDC_COMBO1, 0x403, 5, 0
+0x2e30, 0x3130, "\000" 
+    IDC_COMBO1, 0x403, 6, 0
+0x2e30, 0x3030, 0x0031, 
+    IDC_COMBO1, 0x403, 7, 0
+0x2e30, 0x3030, 0x3130, "\000" 
+    IDC_COMBO1, 0x403, 8, 0
+0x2e30, 0x3030, 0x3030, 0x0031, 
+    IDC_COMBO1, 0x403, 9, 0
+0x2e30, 0x3030, 0x3030, 0x3130, "\000" 
+    IDC_COMBO1, 0x403, 10, 0
+0x2e30, 0x3030, 0x3030, 0x3030, 0x0031, 
+    IDC_COMBO1, 0x403, 11, 0
+0x2e30, 0x3030, 0x3030, 0x3030, 0x3130, "\000" 
+    IDC_COMBO1, 0x403, 12, 0
+0x2e30, 0x3030, 0x3030, 0x3030, 0x3030, 0x0031, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_PROJNAME            "starmask"
+END
+
+#endif    // 中文（中华人民共和国） resources
+/////////////////////////////////////////////////////////////////////////////
+
+
