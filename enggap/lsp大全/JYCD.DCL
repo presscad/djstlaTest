@@ -1,0 +1,115 @@
+JYCD:dialog
+{
+ 
+ label="江阴长电边框程序";
+ :text
+   {
+     label="请按客户Email要求输入添加文字后,选择边框大小，点开始运行程序";
+                  
+   }
+ :text
+   {
+     label="程序按确定后退出！";
+                  
+   }
+   
+ :boxed_row
+ {
+   :edit_box
+    {
+     label="左上方第一行";
+     key="r_up_1";
+     edit_limit=100;
+     edit_width=40;
+   }
+}
+:boxed_row
+{
+  :edit_box
+   {
+     label="左上方第二行";
+     key="r_up_2";
+     edit_limit=100;
+     edit_width=40;
+   }
+}
+:boxed_row
+{
+  :edit_box
+   {
+     label="左下方第一行 ";
+     key="r_down_1";
+     edit_limit=100;
+     edit_width=40;
+   }
+}
+:boxed_row
+{
+  :edit_box
+   {
+     label="左下方第二行";
+     key="r_down_2";
+     edit_limit=100;
+     edit_width=40;
+   }
+}
+:boxed_row
+{
+  :edit_box
+   {
+     label="右下方第一行";
+     key="l_down_1";
+     edit_limit=100;
+     edit_width=40;
+   }
+}
+:boxed_row
+{
+  :edit_box
+   {
+     label="右下方第二行";
+     key="l_down_2";
+     edit_limit=100;
+     edit_width=40;
+   }
+}
+
+spacer_1;  //空白一行
+
+:boxed_row
+{
+      :row
+    {
+      :radio_button
+      {
+        label="6inch";
+        key="6_bk";
+        value=0;
+      }
+      :radio_button
+      {
+        label="7inch";
+        key="7_bk";
+        value=0;
+      }
+       :radio_button
+      {
+        label="9inch";
+        key="9_bk";
+        value=0;
+      }
+   }
+}
+:boxed_row
+{
+  
+  :button
+  {
+   label="开始";
+   key="start";
+   fixed_width=true;
+   width=3;
+  }
+  ok_only; 
+}
+}
