@@ -1,0 +1,5 @@
+(defun c:test002()
+  (setq pt (list 0 0))
+  (setq r 10)
+  (entmake (list '(0 . "CIRCLE") (cons 10 pt) (cons 40 r)))
+  )

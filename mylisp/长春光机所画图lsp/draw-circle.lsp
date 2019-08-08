@@ -1,0 +1,8 @@
+(defun c:ic(center3Dpoint radiu /)
+  (vl-load-com)
+  (setq acadobject (VLAX-Get-ACAD-Object ))
+  (setq acaddocument (vla-get-activedocument acadobject))
+  (setq mspace (vla-get-modelspace acaddocument))
+  ;(setq mycircle (vla-addcircle mspace (vlax-3d-point '(0 0 0)) 100))
+  (setq mycircle (vla-addcircle mspace center3Dpoint radiu))
+ )
